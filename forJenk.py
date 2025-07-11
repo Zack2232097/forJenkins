@@ -7,6 +7,7 @@ def add():
     try:
         a = int(request.args.get('a', 0))
         b = int(request.args.get('b', 0))
+        print(f"Received a={a}, b={b}")  # Debugging output
         return jsonify({'result': a + b})
     except (TypeError, ValueError):
         return jsonify({'error': '参数错误，a 和 b 应该是整数'}), 400
